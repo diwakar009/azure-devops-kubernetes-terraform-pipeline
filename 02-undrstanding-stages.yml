@@ -23,16 +23,23 @@ stages:
   - job: DevDeployJob
     steps:
       - bash: echo DevDeployJob 
+  dependsOn: Build
+ 
 - stage: QADeploy
   jobs:
   - job: QADeployJob
     steps:
       - bash: echo QADeployJob 
+  dependsOn: Build
+
 - stage: ProdDeploy
   jobs:
   - job: ProdDeployJob
     steps:
       - bash: echo ProdDeployJob 
+  dependsOn: 
+  - Build
+  - QADeploy
 
 
 
