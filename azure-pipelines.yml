@@ -20,7 +20,7 @@ stages:
       displayName: Build an image
       inputs:
         containerRegistry: 'DiwakarDockerHub'
-        repository: 'diwakar009/currency--exchange-devops'
+        repository: 'diwakar009/currency-exchange-devops'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
