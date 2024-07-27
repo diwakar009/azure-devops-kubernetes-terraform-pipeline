@@ -15,11 +15,11 @@ stages:
   - job: FirstJob
     steps:
       - bash: echo Build First Job
-      - bash: echo ${PipelineLevelVariable}
-      - bash: echo "BuildNumber- ${Build.BuildNumber}"
-      - bash: echo ${System.DefaultWorkingDirectory}
-      - bash: ls -R ${System.DefaultWorkingDirectory}
-      - bash: echo "${Build.ArtifactStagingDirectory}"
+      - bash: echo $(PipelineLevelVariable)
+      - bash: echo BuildNumber- $(Build.BuildNumber)
+      - bash: echo $(System.DefaultWorkingDirectory)
+      - bash: ls -R $(System.DefaultWorkingDirectory)
+      - bash: echo $(Build.ArtifactStagingDirectory)
 # - job: SecondJob
 #   steps:
 #     - bash: echo Build Second Job 
